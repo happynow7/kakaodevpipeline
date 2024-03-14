@@ -3,15 +3,15 @@ pipeline {
   stages {
     stage('깃 업데이트') {
       steps {
-        git url: 'https://github.com/beomtaek78/kakaodevpipeline.git', branch: 'main'
+        git url: 'https://github.com/hyein01/kakaodevpipeline.git', branch: 'main'
       }
     }
 
     stage('도커 이미지 빌드 및 푸시') {
       steps {
         sh '''
-        sudo docker build -t brian24/kakaodev:yellow .
-        sudo docker push brian24/kakaodev:yellow
+        sudo docker build -t hyein01/kakaodev:yellow .
+        sudo docker push hyein01/kakaodev:yellow
         '''
       }
     }
